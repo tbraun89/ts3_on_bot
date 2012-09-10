@@ -1,3 +1,1 @@
-== TS3 on Bot
-
-{<img src="https://secure.travis-ci.org/tbraun89/ts3_on_bot.png" alt="Build Status" />}[http://travis-ci.org/tbraun89/ts3_on_bot]
+== TS3 on Bot {<img src="https://secure.travis-ci.org/tbraun89/ts3_on_bot.png" alt="Build Status" />}[http://travis-ci.org/tbraun89/ts3_on_bot] {<img src="https://gemnasium.com/tbraun89/acts_as_flying_saucer.png" alt="Dependency Status" />}[https://gemnasium.com/tbraun89/acts_as_flying_saucer]
