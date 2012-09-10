@@ -14,4 +14,9 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
 gem 'jquery-rails'
