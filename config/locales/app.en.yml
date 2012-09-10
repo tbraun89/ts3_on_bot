@@ -1,0 +1,63 @@
+en:
+  layouts:
+    application:
+      title: "TS3 on Bot Administration"
+      copy:  "© 2012 TnT-Web-Solutions GbR."
+    menu:
+      home:            "Overview"
+      bots:            "Bots"
+      active:          "Active"
+      paused:          "Paused"
+      add_bot:         "Add new bot"
+      user_management: "User management"
+      logout:          "Sign off"
+  overview:
+    index:
+      headline: "Overview"
+  users:
+    controller:
+      admin:          "Administrator"
+      user:           "User"
+      destroy_notice: "The user has been deleted successfully."
+      destroy_error:  "This user can not be deleted."
+      create_notice:  "User was successfully created."
+      create_alert:   "User could not be created, you have to update the form data."
+      update_notice:  "User was successfully updated."
+      update_alert:   "User could not be updated, you have to update the form data."
+    index:
+      headline:       "User list"
+      id:             "#"
+      username:       "Username"
+      role:           "Role"
+      email:          "Email"
+      add:            "Add new user"
+      actions:        "Actions"
+      edit:           "Edit"
+      delete:         "Delete"
+      delete_confirm: "Do you really want do delete this user?"
+    edit:
+      headline: "Edit"
+    new:
+      headline: "New user"
+    form:
+      save:  "Save"
+      admin: "Admin"
+
+  devise:
+    sessions:
+      new:
+        headline: "Sign in"
+        remember: "Remember me"
+        sign_in:  "Sign in"
+
+  cancan:
+    access_denied: "You are not allowed to perform this action."
+
+  activerecord:
+    attributes:
+      user:
+        username:              "Username"
+        password:              "Password"
+        password_confirmation: "Password confirmation"
+        email:                 "Email"
+

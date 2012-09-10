@@ -1,0 +1,43 @@
+- if can?(:read, :menu) && user_signed_in?
+  .container.nav-collapse
+    %ul.nav
+      %li
+        = link_to root_path do
+          %i.icon-home
+          = t('.home')
+
+      %li.dropdown
+        = link_to '#', :class => "dropdown-toggle", :'data-toggle' => "dropdown" do
+          %i.icon-th-large
+          = t('.bots')
+          %b.caret
+        %ul.dropdown-menu
+          %li.nav-header
+            %i.icon-play
+            = t('.active')
+          %li= link_to "Bot 1", '#'
+          %li
+            = link_to "Bot 3", '#'
+
+          %li.nav-header
+            %i.icon-pause
+            = t('.paused')
+          %li= link_to "Bot 2", '#'
+
+          %li.divider
+          %li
+            = link_to '#' do
+              = # TODO fix grafic bug on hover
+              %i.icon-plus-sign
+              = t('.add_bot')
+
+      - if can? :manage, User
+        %li
+          = link_to users_path do
+            %i.icon-user
+            = t('.user_management')
+
+      %li
+        = link_to destroy_user_session_path, :method => :delete do
+          %i.icon-off
+          = t('.logout')

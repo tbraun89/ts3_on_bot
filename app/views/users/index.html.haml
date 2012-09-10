@@ -1,0 +1,33 @@
+%h1= t('.headline')
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.username')
+      %th= t('.role')
+      %th= t('.email')
+      %th= t('.actions')
+
+  %tbody
+    - @users.each do |user|
+      %tr.striped-hover
+        %td
+          - if user.admin?
+            %i.icon-star
+          - else
+            %i.icon-user
+          = user.id
+        %td= user.username
+        %td= user.role_name
+        %td= user.email
+        %td
+          = link_to edit_user_path(user), :rel => "tooltip", :'data-original-title' => t('.edit') do
+            %i.icon-edit
+          = raw('&nbsp;&nbsp;')
+          = link_to user_path(user), :method => :delete, :'data-original-title' => t('.delete'), :confirm => t('.delete_confirm') do
+            %i.icon-remove
+
+= link_to users_new_path do
+  %i.icon-plus-sign
+  = t('.add')
