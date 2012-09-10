@@ -30,7 +30,11 @@
             = yield
     
       %footer
-        %p= t('.copy')
+        %p
+          = "Version: #{get_version}"
+          %i.icon-chevron-down
+          = t('.copy')
+
     /
       Javascripts
       \==================================================
