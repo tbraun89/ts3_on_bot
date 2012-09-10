@@ -1,1 +1,3 @@
 == TS3 on Bot
+
+{<img src="https://secure.travis-ci.org/tbraun89/ts3_on_bot.png" alt="Build Status" />}[http://travis-ci.org/tbraun89/ts3_on_bot]
