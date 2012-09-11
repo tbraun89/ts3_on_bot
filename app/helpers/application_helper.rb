@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def get_version
-    `git describe --exact-match --abbrev=0`
+    `git describe --abbrev=0`
   end
 
 end
