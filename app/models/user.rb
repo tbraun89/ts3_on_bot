@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :rememberable, :trackable, :validatable
 
+  has_and_belongs_to_many :bots
+
   attr_accessible :username, :password, :password_confirmation, :remember_me, :admin, :email
 
   validates :username, :uniqueness => true
