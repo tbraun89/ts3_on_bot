@@ -1,0 +1,23 @@
+- if running_bots.count > 0
+  %li.nav-header
+    %i.icon-play
+    = t('.active')
+  - running_bots.each do |bot|
+    = link_to bot.name, bot_path(bot)
+
+- if paused_bots.count > 0
+  %li.nav-header
+    %i.icon-pause
+    = t('.paused')
+  - paused_bots.each do |bot|
+    %li= link_to bot.name, bot_path(bot)
+
+- if running_bots.count > 0 || paused_bots.count > 0
+  %li.divider
+
+- if can? :create, Bot
+  %li
+    = link_to '#' do
+      = # TODO fix grafic bug on hover
+      %i.icon-plus-sign
+      = t('.add_bot')

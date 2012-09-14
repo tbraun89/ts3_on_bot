@@ -4,4 +4,6 @@ class Bot < ActiveRecord::Base
 
   attr_accessible :name, :running
 
+  validates :name, :uniqueness => true
+
 end

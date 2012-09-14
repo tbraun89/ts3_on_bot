@@ -12,24 +12,7 @@
           = t('.bots')
           %b.caret
         %ul.dropdown-menu
-          %li.nav-header
-            %i.icon-play
-            = t('.active')
-          %li= link_to "Bot 1", '#'
-          %li
-            = link_to "Bot 3", '#'
-
-          %li.nav-header
-            %i.icon-pause
-            = t('.paused')
-          %li= link_to "Bot 2", '#'
-
-          %li.divider
-          %li
-            = link_to '#' do
-              = # TODO fix grafic bug on hover
-              %i.icon-plus-sign
-              = t('.add_bot')
+          = render "layouts/bots"
 
       - if can? :manage, User
         %li
