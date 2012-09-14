@@ -6,4 +6,6 @@ TS3OnBot::Application.routes.draw do
 
   resources :users, :except => :show
 
+  resources :bots
+
 end
