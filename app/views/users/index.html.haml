@@ -25,7 +25,7 @@
           = link_to edit_user_path(user), :rel => "tooltip", :'data-original-title' => t('.edit') do
             %i.icon-edit
           = raw('&nbsp;&nbsp;')
-          = link_to user_path(user), :method => :delete, :'data-original-title' => t('.delete'), :confirm => t('.delete_confirm') do
+          = link_to user_path(user), :id => "delete_#{user.id}", :method => :delete, :'data-original-title' => t('.delete'), :confirm => t('.delete_confirm') do
             %i.icon-remove
 
 = link_to new_user_path do

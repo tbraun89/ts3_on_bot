@@ -8,7 +8,12 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do
     flash[:alert] = I18n::t('cancan.access_denied')
-    redirect_to :back
+
+    begin
+      redirect_to :back
+    rescue
+      redirect_to root_path
+    end
   end
 
 end
