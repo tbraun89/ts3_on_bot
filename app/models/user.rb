@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
     admin? ? I18n::t('users.controller.admin') : I18n::t('users.controller.user')
   end
 
+  def to_s
+    username
+  end
+
 end

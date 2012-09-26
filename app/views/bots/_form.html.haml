@@ -1,4 +1,6 @@
-= form_for @bot do |f|
+
+
+= form_for bot do |f|
   = f.label      :name
   = f.text_field :name
 
@@ -14,8 +16,8 @@
   = f.label      :query_user
   = f.text_field :query_user
 
-  = f.label          :query_password
-  = f.password_field :query_password
+  = f.label      :query_password
+  = f.text_field :query_password
 
   %br
   = f.submit t('.save'), :class => "btn"

@@ -1,0 +1,13 @@
+.well
+  %ul.nav.nav-list
+    %li.nav-header= t('.manager_headline')
+
+  - bot.users.each do |user|
+    = link_to remove_user_path(bot, user), :method => :delete do
+      %span.label.label-inverse= user.username
+
+- if bot.users_for_manager.count > 0
+  = form_for "add_user", :url => add_user_path(bot) do |f|
+    = f.select :user, bot.users_for_manager
+
+    = f.submit t('.add'), :class => "btn", :style => "margin-top: -9px;"

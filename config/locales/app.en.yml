@@ -44,12 +44,25 @@ en:
       admin: "Admin"
   bots:
     controller:
-      create_notice: "Bot was successfully created."
-      create_error:  "Bot could not be created, you have to update the form data."
+      create_notice:      "Bot was successfully created."
+      create_error:       "Bot could not be created, you have to update the form data."
+      add_user_notice:    "User was successfully added."
+      remove_user_notice: "User was successfully removed."
+      update_notice:      "Basic settings was successfully updated."
+      update_error:       "Basic settings could not be updated, you have to update the form data."
     new:
       headline: "Create a new bot"
+    show:
+      headline:     "Bot manager:"
+      restart_info: "If you update the settings of a running bot you need to restart it that everything can work."
+      basics:       "Basic settings"
+      users:        "User setting"
     form:
       save:           "Save"
+    modules:
+      users:
+        manager_headline: "Manager list (click to remove)"
+        add:              "Add"
 
   devise:
     sessions:
