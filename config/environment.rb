@@ -8,4 +8,4 @@ TS3OnBot::Application.initialize!
 require File.expand_path('../bots', __FILE__)
 
 # Initialize the bots
-Bots::Application.initialize!
+Bots::Application.initialize! rescue false
