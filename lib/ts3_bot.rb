@@ -5,7 +5,7 @@ class TS3Bot < Thread
     @id = id
     super &method(:thread)
 
-    @logger = Logger.new(File.expand_path("log/bot-#{id}.log", Rails.root))
+    @logger = Logger.new(File.expand_path("log/bot-#{id}.log", Rails.root), 3, 1048576)
     @logger.formatter = proc do |severity, datetime, progname, msg|
       "[#{severity}] #{datetime}: #{msg}\n"
     end
@@ -17,7 +17,7 @@ class TS3Bot < Thread
   def thread
     while true
       # Do all the Bot actions in here.
-      sleep 2
+      sleep 1
     end
   end
 end

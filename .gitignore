@@ -12,6 +12,12 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/log/*.log.0
+/log/*.log.1
+/log/*.log.2
+/log/*.log.3
+/log/*.log.4
+/log/*.log.5
 /tmp
 
 # Idea files
