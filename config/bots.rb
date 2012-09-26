@@ -1,3 +1,5 @@
+require File.expand_path('lib/ts3_bot', Rails.root)
+
 module Bots
   class Application
     @bot_thread_pool = []
@@ -28,24 +30,6 @@ module Bots
 
     def self.running_bots
       @bot_thread_pool
-    end
-  end
-end
-
-class TS3Bot < Thread
-  attr_accessor :id
-
-  def initialize id
-    @id = id
-    super &method(:thread)
-  end
-
-  private
-
-  def thread
-    while true
-      # Do all the Bot actions in here.
-      sleep 2
     end
   end
 end

@@ -11,13 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914011150) do
+ActiveRecord::Schema.define(:version => 20120926125355) do
 
   create_table "bots", :force => true do |t|
     t.string   "name"
-    t.boolean  "running",    :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.boolean  "running",        :default => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.string   "server_address"
+    t.string   "server_port"
+    t.string   "server_id"
+    t.string   "query_user"
+    t.string   "query_password"
   end
 
   create_table "bots_users", :id => false, :force => true do |t|
