@@ -12,10 +12,9 @@
   - paused_bots.each do |bot|
     %li= link_to bot.name, bot_path(bot)
 
-- if running_bots.count > 0 || paused_bots.count > 0
-  %li.divider
-
 - if can? :create, Bot
+  - if running_bots.count > 0 || paused_bots.count > 0
+    %li.divider
   %li
     = link_to '#' do
       = # TODO fix grafic bug on hover

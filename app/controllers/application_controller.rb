@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
   def bot_list(running)
     if current_user.admin?
-      Bot.joins(:users).where(:running => running)
+      Bot.where(:running => running)
     else
       Bot.joins(:users).where(:running => running).where("bots_users.user_id" => current_user.id)
     end
