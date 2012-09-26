@@ -4,6 +4,6 @@ class Bot < ActiveRecord::Base
 
   attr_accessible :name, :running, :server_address, :server_port, :server_id, :query_user, :query_password
 
-  validates :name, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true
 
 end

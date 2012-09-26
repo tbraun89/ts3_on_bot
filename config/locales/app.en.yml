@@ -36,12 +36,20 @@ en:
       delete:         "Delete"
       delete_confirm: "Do you really want do delete this user?"
     edit:
-      headline: "Edit"
+      headline: "Edit:"
     new:
       headline: "New user"
     form:
       save:  "Save"
       admin: "Admin"
+  bots:
+    controller:
+      create_notice: "Bot was successfully created."
+      create_error:  "Bot could not be created, you have to update the form data."
+    new:
+      headline: "Create a new bot"
+    form:
+      save:           "Save"
 
   devise:
     sessions:
@@ -60,4 +68,11 @@ en:
         password:              "Password"
         password_confirmation: "Password confirmation"
         email:                 "Email"
+      bot:
+        name:           "Name"
+        server_address: "Server address"
+        server_port:    "Server port"
+        server_id:      "Teamspeak server id"
+        query_user:     "Query username"
+        query_password: "Query user password"
 

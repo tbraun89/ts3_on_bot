@@ -1,0 +1,21 @@
+= form_for @bot do |f|
+  = f.label      :name
+  = f.text_field :name
+
+  = f.label      :server_address
+  = f.text_field :server_address
+
+  = f.label      :server_port
+  = f.text_field :server_port
+
+  = f.label      :server_id
+  = f.text_field :server_id
+
+  = f.label      :query_user
+  = f.text_field :query_user
+
+  = f.label          :query_password
+  = f.password_field :query_password
+
+  %br
+  = f.submit t('.save'), :class => "btn"
