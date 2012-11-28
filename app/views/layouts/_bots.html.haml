@@ -3,7 +3,7 @@
     %i.icon-play
     = t('.active')
   - running_bots.each do |bot|
-    = link_to bot.name, bot_path(bot)
+    %li= link_to bot.name, bot_path(bot)
 
 - if paused_bots.count > 0
   %li.nav-header
