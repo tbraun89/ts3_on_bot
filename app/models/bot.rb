@@ -16,6 +16,14 @@ class Bot < ActiveRecord::Base
     users_available
   end
 
+  def self.active
+    Bot.where(:running => true)
+  end
+
+  def self.paused
+    Bot.where(:running => false)
+  end
+
   def to_s
     name
   end

@@ -6,6 +6,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'cancan'
 gem 'less-rails'
+gem 'simple_form'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2'

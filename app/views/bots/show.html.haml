@@ -1,23 +1,25 @@
-%input{:id => "current_tab", :type => "hidden", :value => session[:current_tab]}
-.page-header
-  %h1
-    = t('.headline')
-    %small= @bot.name
+.row.inner
+  .span9
+    %input{:id => "current_tab", :type => "hidden", :value => session[:current_tab]}
+    .page-header
+      %h1
+        = t('.headline')
+        %small= @bot.name
 
-- if @bot.running?
-  %p.text-warning= t('.restart_info')
-  %br
+    - if @bot.running?
+      %p.text-warning= t('.restart_info')
+      %br
 
-.tabbable.tabs-left
-  %ul.nav.nav-tabs
-    %li= link_to t('.basics'), "#basics", :"data-toggle" => "tab"
-    - if can? :manage, @bot
-      %li= link_to t('.users'),  "#users",  :"data-toggle" => "tab"
+    .tabbable.tabs-left
+      %ul.nav.nav-tabs
+        %li= link_to t('.basics'), "#basics", :"data-toggle" => "tab"
+        - if can? :manage, @bot
+          %li= link_to t('.users'),  "#users",  :"data-toggle" => "tab"
 
-  .tab-content
-    .tab-pane#basics
-      = render :partial => "bots/modules/basics", :locals => {:bot => @bot}
+      .tab-content
+        .tab-pane#basics
+          = render :partial => "bots/modules/basics", :locals => {:bot => @bot}
 
-    - if can? :manage, @bot
-      .tab-pane#users
-        = render :partial => "bots/modules/users", :locals => {:bot => @bot}
+        - if can? :manage, @bot
+          .tab-pane#users
+            = render :partial => "bots/modules/users", :locals => {:bot => @bot}

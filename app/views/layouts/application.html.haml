@@ -26,15 +26,24 @@
       .content
         .row
           .span12
-            #ajax_flash
             = bootstrap_flash
-            = yield
-    
+        .row-fluid
+          .span9
+            .container
+              .content
+                = yield
+          .span3
+            = render :partial => "layouts/sidebar"
+
       %footer
-        %p
-          = "Version: #{get_version}"
-          %i.icon-chevron-down
-          = t('.copy')
+        .container
+          .content
+            %hr
+            %p
+              = "Version: #{get_version}"
+              %i.icon-chevron-down
+              = t('.copy')
+            %br
 
     /
       Javascripts

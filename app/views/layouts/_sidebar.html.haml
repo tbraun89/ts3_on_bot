@@ -1,0 +1,12 @@
+.well.sidebar-nav
+  %h3= t('overview.index.headline')
+  %ul.nav.nav-list
+    %li
+      .stat_label= t('.total') + ":"
+      %span.label.label-info= Bot.all.count
+    %li
+      .stat_label= t('layouts.menu.active') + ":"
+      %span.label.label-info= Bot.active.count
+    %li
+      .stat_label= t('layouts.menu.paused') + ":"
+      %span.label.label-info= Bot.paused.count

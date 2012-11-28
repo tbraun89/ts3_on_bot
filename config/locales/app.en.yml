@@ -3,6 +3,8 @@ en:
     application:
       title: "TS3 on Bot Administration"
       copy:  "© 2012 TnT-Web-Solutions GbR."
+    sidebar:
+      total: "Total"
     menu:
       home:            "Overview"
       bots:            "Bots"

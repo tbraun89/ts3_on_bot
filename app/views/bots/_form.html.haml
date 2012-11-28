@@ -1,23 +1,10 @@
+= simple_form_for bot, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :server_address
+  = f.input :server_port
+  = f.input :server_id
+  = f.input :query_user
+  = f.input :query_password
 
-
-= form_for bot do |f|
-  = f.label      :name
-  = f.text_field :name
-
-  = f.label      :server_address
-  = f.text_field :server_address
-
-  = f.label      :server_port
-  = f.text_field :server_port
-
-  = f.label      :server_id
-  = f.text_field :server_id
-
-  = f.label      :query_user
-  = f.text_field :query_user
-
-  = f.label      :query_password
-  = f.text_field :query_password
-
-  %br
-  = f.submit t('.save'), :class => "btn"
+  .form-actions
+    = f.submit t('.save'), :class => "btn btn-primary"

@@ -1,6 +1,8 @@
-.page-header
-  %h1
-    = t('.headline')
-    %small= "#{@user.username}"
+.row.inner
+  .span9
+    .page-header
+      %h1
+        = t('.headline')
+        %small= "#{@user.username}"
 
-= render :partial => "form"
+    = render :partial => "form"
