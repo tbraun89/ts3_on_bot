@@ -1,0 +1,13 @@
+- if bot.afk_check_module?
+  - if can? :manage, @bot
+    = link_to deactivate_bot_module_path(bot, Bot::AFK_CHECK), :class => "btn btn-inverse btn-large" do
+      %i.icon-stop
+      = t('.deactivate')
+
+  = # TODO form to select the afk channel
+
+- else
+  - if can? :manage, @bot
+    = link_to activate_bot_module_path(bot, Bot::AFK_CHECK), :class => "btn btn-inverse btn-large" do
+      %i.icon-play
+      = t('.activate')

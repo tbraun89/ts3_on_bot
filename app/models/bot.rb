@@ -1,6 +1,6 @@
 class Bot < ActiveRecord::Base
 
-  BASIC_SETTINGS = 0
+  AFK_CHECK = 0
 
   has_and_belongs_to_many :users
 
@@ -39,6 +39,12 @@ class Bot < ActiveRecord::Base
   def restart
     self.stop
     self.start
+  end
+
+  def change_module_state(model_id)
+    if model_id == AFK_CHECK.to_s
+      afk_check_module? ? update_attribute(:afk_check_module, false) : update_attribute(:afk_check_module, true)
+    end
   end
 
   def to_s

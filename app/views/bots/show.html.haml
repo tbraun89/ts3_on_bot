@@ -17,6 +17,7 @@
         %li= link_to t('.basics'), "#basics", :"data-toggle" => "tab"
         - if can? :manage, @bot
           %li= link_to t('.users'),  "#users",  :"data-toggle" => "tab"
+        %li= link_to t('.afk_check'), "#afk_check", :"data-toggle" => "tab"
 
       .tab-content
         .tab-pane#basics
@@ -25,3 +26,6 @@
         - if can? :manage, @bot
           .tab-pane#users
             = render :partial => "bots/modules/users", :locals => {:bot => @bot}
+
+        .tab-pane#afk_check
+          = render :partial => "bots/modules/afk_check", :locals => {:bot => @bot}

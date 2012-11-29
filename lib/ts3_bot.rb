@@ -1,3 +1,5 @@
+require "ts3_bot_modules/afk_check"
+
 class TS3Bot < Thread
   attr_accessor :id
 
@@ -58,6 +60,7 @@ class TS3Bot < Thread
                                   :password => @bot.query_password
         connected = true
       rescue
+
         @logger.error "Failed connecting to #{@bot.server_address}:#{@bot.server_port}"
         sleep 3
       end
@@ -65,6 +68,6 @@ class TS3Bot < Thread
   end
 
   def module_handler
-    # TODO
+    afk_check_module(@bot, @query) if @bot.afk_check_module?
   end
 end

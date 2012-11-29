@@ -104,6 +104,24 @@ class BotsController < ApplicationController
     redirect_to @bot
   end
 
+  def activate_module
+    @bot = Bot.find(params[:id])
+    authorize! :manage, @bot
+
+    @bot.change_module_state(params[:module_id])
+
+    redirect_to @bot
+  end
+
+  def deactivate_module
+    @bot = Bot.find(params[:id])
+    authorize! :manage, @bot
+
+    @bot.change_module_state(params[:module_id])
+
+    redirect_to @bot
+  end
+
   private
 
   def update_bot(params)
