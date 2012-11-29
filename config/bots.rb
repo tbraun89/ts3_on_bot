@@ -21,6 +21,7 @@ module Bots
     def self.remove_bot id
       @bot_thread_pool.each do |bot|
         if bot.id == id
+          bot.stop
           return @bot_thread_pool.delete(bot)
         end
       end

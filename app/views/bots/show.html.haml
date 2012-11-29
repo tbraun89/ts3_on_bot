@@ -6,6 +6,8 @@
         = t('.headline')
         %small= @bot.name
 
+    = render :partial => "bots/actions", :locals => {:bot => @bot}
+
     - if @bot.running?
       %p.text-warning= t('.restart_info')
       %br

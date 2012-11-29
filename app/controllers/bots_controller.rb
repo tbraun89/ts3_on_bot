@@ -34,8 +34,23 @@ class BotsController < ApplicationController
     redirect_to bot_path(@bot)
   end
 
+  def destroy
+    @bot = Bot.find(params[:id])
+    authorize! :destroy, @bot
+
+    @bot.stop
+
+    if @bot.destroy
+      flash[:notice] = I18n::t('bots.controller.destroy_notice')
+    else
+      flash[:alert] = I18n::t('bots.controller.destroy_error')
+    end
+
+    redirect_to root_path
+  end
+
   def add_user
-    @bot                  = Bot.find(params[:id])
+    @bot = Bot.find(params[:id])
     authorize! :manage, @bot
 
     @bot.users << User.where(:username => params[:add_user][:user]).first
@@ -46,7 +61,7 @@ class BotsController < ApplicationController
   end
 
   def remove_user
-    @bot                  = Bot.find(params[:id])
+    @bot = Bot.find(params[:id])
     authorize! :manage, @bot
 
     @bot.users.delete(User.find(params[:uid]))
@@ -60,6 +75,33 @@ class BotsController < ApplicationController
     authorize! :read, Bot
     session[:current_tab] = "##{params[:tab_name]}"
     render :nothing => true
+  end
+
+  def stop
+    @bot = Bot.find(params[:id])
+    authorize! :change_running_state, @bot
+
+    @bot.stop
+
+    redirect_to @bot
+  end
+
+  def start
+    @bot = Bot.find(params[:id])
+    authorize! :change_running_state, @bot
+
+    @bot.start
+
+    redirect_to @bot
+  end
+
+  def restart
+    @bot = Bot.find(params[:id])
+    authorize! :change_running_state, @bot
+
+    @bot.restart
+
+    redirect_to @bot
   end
 
   private

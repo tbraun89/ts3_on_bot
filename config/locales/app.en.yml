@@ -21,7 +21,7 @@ en:
       admin:          "Administrator"
       user:           "User"
       destroy_notice: "The user has been deleted successfully."
-      destroy_error:  "This user can not be deleted."
+      destroy_error:  "The user can not be deleted."
       create_notice:  "User was successfully created."
       create_alert:   "User could not be created, you have to update the form data."
       update_notice:  "User was successfully updated."
@@ -52,6 +52,8 @@ en:
       remove_user_notice: "User was successfully removed."
       update_notice:      "Basic settings was successfully updated."
       update_error:       "Basic settings could not be updated, you have to update the form data."
+      destroy_notice:     "The bot has been deleted successfully."
+      destroy_error:      "The bot can not be deleted."
     new:
       headline: "Create a new bot"
     show:
@@ -61,6 +63,12 @@ en:
       users:        "User setting"
     form:
       save:           "Save"
+    actions:
+      stop: "Stop"
+      restart: "Restart"
+      start: "Start"
+      delete: "Delete"
+      delete_confirm: "Do you really want do delete this bot?"
     modules:
       users:
         manager_headline: "Manager list (click to remove)"

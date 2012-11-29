@@ -24,6 +24,23 @@ class Bot < ActiveRecord::Base
     Bot.where(:running => false)
   end
 
+  def stop
+    Bots::Application.remove_bot self.id
+    update_attribute :running, false
+    sleep 1
+  end
+
+  def start
+    Bots::Application.add_bot self.id
+    update_attribute :running, true
+    sleep 1
+  end
+
+  def restart
+    self.stop
+    self.start
+  end
+
   def to_s
     name
   end

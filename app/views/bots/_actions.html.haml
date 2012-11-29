@@ -1,0 +1,20 @@
+.hero-unit
+  .btn-toolbar
+    .btn-group
+      - if bot.running?
+        = link_to stop_bot_path, :class => "btn btn-inverse btn-large" do
+          %i.icon-stop
+          = t('.stop')
+
+        = link_to restart_bot_path, :class => "btn btn-inverse btn-large" do
+          %i.icon-refresh
+          = t('.restart')
+      - else
+        = link_to start_bot_path, :class => "btn btn-inverse btn-large" do
+          %i.icon-play
+          = t('.start')
+
+      - if can? :destroy, bot
+        = link_to bot_path, :method => :delete, :confirm => t('.delete_confirm'), :class => "btn btn-danger btn-large" do
+          %i.icon-remove
+          = t('.delete')

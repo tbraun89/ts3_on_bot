@@ -16,8 +16,9 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
-group :test do
+group :test, :development do
   gem 'cucumber-rails', :require => false
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'

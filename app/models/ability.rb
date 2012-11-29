@@ -17,7 +17,7 @@ class Ability
   def user_ability(user)
     can :read, :menu
     can :read, :overview
-    can [:read, :update], Bot do |bot|
+    can [:read, :update, :change_running_state], Bot do |bot|
       bot.users.include?(user)
     end
   end
