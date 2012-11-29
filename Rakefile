@@ -6,4 +6,4 @@ require File.expand_path('../config/application', __FILE__)
 
 TS3OnBot::Application.load_tasks
 
-task :default => [:cucumber]
+task :default => [:cucumber, :spec]
