@@ -7,6 +7,7 @@ gem 'devise'
 gem 'cancan'
 gem 'less-rails'
 gem 'simple_form'
+gem 'ts3query'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2'

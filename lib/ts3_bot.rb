@@ -29,9 +29,42 @@ class TS3Bot < Thread
   private
 
   def thread
+    connect_to_ts3 unless Rails.env == "test"
+
     while @running
-      # TODO do all bot actions in here
+      unless Rails.env == "test"
+        begin
+          module_handler
+        rescue
+          @logger.info "Connection lost, trying to reconnect."
+          connect_to_ts3
+        end
+      end
+
       sleep 1
     end
+  end
+
+  def connect_to_ts3
+    connected = false
+
+    while !connected
+      @logger.info "Connecting to #{@bot.server_address}:#{@bot.server_port}"
+
+      begin
+        @query = TS3Query.connect :address  => @bot.server_address,
+                                  :port     => @bot.server_port,
+                                  :username => @bot.query_user,
+                                  :password => @bot.query_password
+        connected = true
+      rescue
+        @logger.error "Failed connecting to #{@bot.server_address}:#{@bot.server_port}"
+        sleep 3
+      end
+    end
+  end
+
+  def module_handler
+    # TODO
   end
 end
