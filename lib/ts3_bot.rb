@@ -8,7 +8,7 @@ class TS3Bot < Thread
     @running = true
     super &method(:thread)
 
-    @logger = Logger.new(File.expand_path("log/bot-#{@bot.id}.log", Rails.root), 3, 1048576)
+    @logger = Logger.new(File.expand_path("log/bot-#{@bot.name.capitalize.downcase}.log", Rails.root), 3, 1048576)
     @logger.formatter = proc do |severity, datetime, progname, msg|
       "[#{severity}] #{datetime}: #{msg}\n"
     end
