@@ -17,4 +17,8 @@ TS3OnBot::Application.routes.draw do
   get    "bots/:id/activate_module/:module_id"   => "bots#activate_module",   :as => "activate_bot_module"
   get    "bots/:id/deactivate_module/:module_id" => "bots#deactivate_module", :as => "deactivate_bot_module"
 
+  namespace :bots do
+    post ":id/save_afk_channel" => "afk_check_module#save", :as => "save_afk_channel"
+  end
+
 end

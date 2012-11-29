@@ -63,20 +63,25 @@ en:
       users:        "User setting"
       afk_check:    "AFK Check Module"
     form:
-      save:           "Save"
+      save: "Save"
     actions:
-      stop: "Stop"
-      restart: "Restart"
-      start: "Start"
-      delete: "Delete"
+      stop:           "Stop"
+      restart:        "Restart"
+      start:          "Start"
+      delete:         "Delete"
       delete_confirm: "Do you really want do delete this bot?"
     modules:
       users:
         manager_headline: "Manager list (click to remove)"
         add:              "Add"
       afk_check:
-        activate:   "Enable"
-        deactivate: "Disable"
+        controller:
+          saved_notice: "Channel was successfully saved."
+        activate:    "Enable"
+        deactivate:  "Disable"
+        settings:    "Settings"
+        afk_channel: "Channel Name"
+        save:        "Save"
 
   devise:
     sessions:

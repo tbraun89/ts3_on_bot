@@ -11,19 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129151759) do
+ActiveRecord::Schema.define(:version => 20121129190043) do
+
+  create_table "afk_check_modules", :force => true do |t|
+    t.string   "channel_name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "bots", :force => true do |t|
     t.string   "name"
-    t.boolean  "running",          :default => false
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.boolean  "running",             :default => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "server_address"
     t.string   "server_port"
     t.string   "server_id"
     t.string   "query_user"
     t.string   "query_password"
-    t.boolean  "afk_check_module", :default => false
+    t.integer  "afk_check_module_id"
   end
 
   create_table "bots_users", :id => false, :force => true do |t|

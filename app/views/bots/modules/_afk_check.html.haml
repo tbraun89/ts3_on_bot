@@ -1,13 +1,22 @@
-- if bot.afk_check_module?
-  - if can? :manage, @bot
+- unless bot.afk_check_module.nil?
+  - if can? :manage, bot
     = link_to deactivate_bot_module_path(bot, Bot::AFK_CHECK), :class => "btn btn-inverse btn-large" do
       %i.icon-stop
       = t('.deactivate')
+    %hr
 
-  = # TODO form to select the afk channel
+  %h3= t('.settings')
+  = form_for :afk_check, :url => bots_save_afk_channel_path(bot), :html => {:class => 'form-horizontal'} do |f|
+    .control-group
+      = f.label :afk_channel, t('.afk_channel'),:class => "control-label"
+      .controls
+        = f.text_field :afk_channel, :value => bot.afk_check_module.channel_name
+
+    .form-actions
+      = f.submit t('.save'), :class => "btn btn-primary"
 
 - else
-  - if can? :manage, @bot
+  - if can? :manage, bot
     = link_to activate_bot_module_path(bot, Bot::AFK_CHECK), :class => "btn btn-inverse btn-large" do
       %i.icon-play
       = t('.activate')

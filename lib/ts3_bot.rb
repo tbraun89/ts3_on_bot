@@ -31,16 +31,14 @@ class TS3Bot < Thread
   private
 
   def thread
-    connect_to_ts3 unless Rails.env == "test"
+    connect_to_ts3
 
     while @running
-      unless Rails.env == "test"
-        begin
-          module_handler
-        rescue
-          @logger.info "Connection lost, trying to reconnect."
-          connect_to_ts3
-        end
+      begin
+        module_handler
+      rescue
+        @logger.error "Connection lost, trying to reconnect."
+        connect_to_ts3
       end
 
       sleep 1
@@ -58,16 +56,18 @@ class TS3Bot < Thread
                                   :port     => @bot.server_port,
                                   :username => @bot.query_user,
                                   :password => @bot.query_password
+
+        @query.use :sid => @bot.server_id
         connected = true
       rescue
-
         @logger.error "Failed connecting to #{@bot.server_address}:#{@bot.server_port}"
-        sleep 3
       end
+
+      sleep 3
     end
   end
 
   def module_handler
-    afk_check_module(@bot, @query) if @bot.afk_check_module?
+    afk_check_module(@bot, @query) unless @bot.afk_check_module.nil?
   end
 end

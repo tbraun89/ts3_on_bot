@@ -3,6 +3,7 @@ class Bot < ActiveRecord::Base
   AFK_CHECK = 0
 
   has_and_belongs_to_many :users
+  belongs_to              :afk_check_module
 
   attr_accessible :name, :running, :server_address, :server_port, :server_id, :query_user, :query_password
 
@@ -43,7 +44,11 @@ class Bot < ActiveRecord::Base
 
   def change_module_state(model_id)
     if model_id == AFK_CHECK.to_s
-      afk_check_module? ? update_attribute(:afk_check_module, false) : update_attribute(:afk_check_module, true)
+      if afk_check_module.nil?
+        update_attribute(:afk_check_module, AfkCheckModule.create)
+      else
+        afk_check_module.destroy
+      end
     end
   end
 

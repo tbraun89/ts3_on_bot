@@ -1,0 +1,2 @@
+module Bots::AfkCheckModuleHelper
+end

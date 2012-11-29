@@ -29,6 +29,15 @@ module Bots
       false
     end
 
+    def self.bot_by_id id
+      @bot_thread_pool.each do |bot|
+        if bot.id == id
+          return bot
+        end
+      end
+      nil
+    end
+
     def self.running_bots
       @bot_thread_pool
     end
