@@ -11,7 +11,7 @@ When /^I a?m? ?(not )?authenticated?( as (.+) \/\/ (.+))?$/ do |status, unused, 
     fill_in "user_username", :with => username
     fill_in "user_password", :with => password
 
-    click_button "sign_in_btn"
+    click_button I18n::t('devise.sessions.new.sign_in')
   end
 end
 
@@ -19,7 +19,7 @@ When /^I authenticate with wrong data$/ do
   fill_in "user_username", :with => "wrong"
   fill_in "user_password", :with => "userdata"
 
-  click_button "sign_in_btn"
+  click_button I18n::t('devise.sessions.new.sign_in')
 end
 
 When /^see the "(.+)" (.+)/ do |content, type|
