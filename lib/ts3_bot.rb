@@ -31,14 +31,16 @@ class TS3Bot < Thread
   private
 
   def thread
-    connect_to_ts3
+    connect_to_ts3 unless Rails.env == "test"
 
     while @running
-      begin
-        module_handler
-      rescue
-        @logger.error "Connection lost, trying to reconnect."
-        connect_to_ts3
+      unless Rails.env == "test"
+        begin
+          module_handler
+        rescue
+          @logger.error "Connection lost, trying to reconnect."
+          connect_to_ts3
+        end
       end
 
       sleep 1
