@@ -1,1 +1,3 @@
 == TS3 on Bot {<img src="https://secure.travis-ci.org/tbraun89/ts3_on_bot.png" alt="Build Status" />}[http://travis-ci.org/tbraun89/ts3_on_bot] {<img src="https://gemnasium.com/tbraun89/ts3_on_bot.png" alt="Dependency Status" />}[https://gemnasium.com/tbraun89/ts3_on_bot] {<img src="https://a248.e.akamai.net/camo.github.com/9c977523be7fce95c026a1b7d9673903f82e59cd/687474703a2f2f7374696c6c6d61696e7461696e65642e636f6d2f7374696c6c6d61696e7461696e65642f7374696c6c6d61696e7461696e65642e706e67" />}[http://stillmaintained.com/tbraun89/ts3_on_bot]
+
+TODO
